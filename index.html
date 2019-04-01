@@ -1,0 +1,116 @@
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<!--第一遍-->
+		
+		<style type="text/css">
+			p{
+				color: green;
+				text-align: center;
+				padding-top: 100px;
+				font-size: 30px;
+				border: solid 5px yellow;
+				margin: 0;
+				padding: 0;
+			}
+		</style>
+		<script>
+			window.onload=function(){
+				var p=document.getElementsByTagName("p")[0];
+				var endTime=new Date("2019/04/19 23:59:59");
+				console.log(endTime);
+				setInterval(fn,1000);
+				function fn(){
+					var currentTime=new Date();
+					//计算时间差
+					var ms=endTime.getTime()-currentTime.getTime();
+					//毫秒转化成秒
+					var seconds=parseInt(ms/1000);
+					
+					//秒转换成天
+					var day=parseInt(seconds/3600/24);
+					//秒转换成小时
+					var hour=parseInt(seconds/3600%24);
+					//秒转化成分钟
+					var minutes=0;
+					var tempS=seconds-day*24*3600-hour*60*60;
+					if(tempS>0){
+						minutes=parseInt(tempS/60);
+					}
+					
+					var second=seconds-day*24*3600-hour*60*60-minutes*60;
+//					?:
+					day>10?day:day="0"+day;
+					hour>10?hour:hour="0"+hour;
+					minutes>10?minutes:minutes="0"+minutes;
+					second>10?second:second="0"+second;
+					p.innerHTML="距离四月十九日还有："+day+"天"+hour+"时"+minutes+"分"+second+"秒";
+				}
+			}
+		</script>
+		
+	 <!--第二遍-->
+	 
+	 	<style type="text/css">
+			p{
+				color: green;
+				text-align: center;
+				padding-top: 100px;
+				font-size: 30px;
+				border: solid 5px yellow;
+				margin: 0;
+				padding: 0;
+			}
+		</style>
+		<script>
+			window.onload=function(){
+				var p=document.getElementsByTagName("p")[0];
+				var endTime=new Date("2019/04/19 23:59:59");
+				console.log(endTime);
+				setInterval(fn,1000);
+				function fn(){
+					var currentTime=new Date();
+					//计算时间差
+					var ms=endTime.getTime()-currentTime.getTime();
+					//毫秒转化成秒
+					var seconds=parseInt(ms/1000);
+					
+					//秒转换成天
+					var day=parseInt(seconds/3600/24);
+					//秒转换成小时
+					var hour=parseInt(seconds/3600%24);
+					//秒转化成分钟
+					var minutes=0;
+					var tempS=seconds-day*24*3600-hour*60*60;
+					if(tempS>0){
+						minutes=parseInt(tempS/60);
+					}
+					
+					var second=seconds-day*24*3600-hour*60*60-minutes*60;
+//					?:
+					day>10?day:day="0"+day;
+					hour>10?hour:hour="0"+hour;
+					minutes>10?minutes:minutes="0"+minutes;
+					second>10?second:second="0"+second;
+					p.innerHTML="距离四月十九日还有："+day+"天"+hour+"时"+minutes+"分"+second+"秒";
+				}
+			}
+		</script>
+	</head>
+	<body>
+		<!--第一遍-->
+		
+		<p >
+			距离四月十九日还有：
+		</p>
+		
+		<!--第二遍-->
+		<p >
+			距离四月十九日还有：
+		</p>
+		
+	</body>
+</html>
